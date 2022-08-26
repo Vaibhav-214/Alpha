@@ -4,16 +4,15 @@ public class Diagonalsum_mysol {
     public static int diagsum(int [][] matrix){
         int sum = 0;
         int i = 0;
-        int j = matrix.length - 1;
+
         while(i <= matrix.length - 1) {
             sum += matrix[i][i];
-            sum += matrix[i][j];
+            sum += matrix[i][matrix.length -1 -i];
             i++;
-            j--;
         }
-        if(matrix.length % 2 != 0) {
-            sum -= matrix[matrix.length/2][matrix.length/2];
-        }
+         if(matrix.length % 2 != 0) {
+             sum -= matrix[matrix.length/2][matrix.length/2];
+         }
         return sum;
     }
     public static void main(String[] args) {
